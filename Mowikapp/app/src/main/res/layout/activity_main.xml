@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_700"
+    android:orientation="vertical" >
+    <TextView
+        android:layout_height="90dp"
+        android:layout_width="match_parent"
+        android:textSize="45sp"
+        android:paddingLeft="60dp"
+        android:paddingTop="15dp"
+        android:textColor="#333300"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:background="#800000"
+        android:text="Miwok App" />
+
+    <TextView
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:textSize="38sp"
+        android:paddingLeft="30dp"
+        android:id="@+id/number"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:background="#33cc33"
+        android:text="Numbers"
+        />
+    <TextView
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:textSize="38sp"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:background="#cc33ff"
+        android:text="Family Members" />
+
+    <TextView
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:textSize="38sp"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:background="#cc0000"
+        android:text="Colors" />
+    <TextView
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:textSize="38sp"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:background="#3366ff"
+        android:text="Phrases" />
+
+</LinearLayout>
