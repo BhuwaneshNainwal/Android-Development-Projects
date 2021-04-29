@@ -2,15 +2,19 @@ package com.example.mowikapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -36,10 +40,16 @@ public class Numbers extends AppCompatActivity {
         words.add(new Word("nine", "wo’e" , R.drawable.number_nine , R.raw.number_nine));
         words.add(new Word("ten", "na’aacha" , R.drawable.number_ten , R.raw.number_ten));
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(this , R.raw.number_six);
         AdapterArr adapter = new AdapterArr(this , words , R.color.category_numbers);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapter);
+        MediaPlayer mediaPlayer = MediaPlayer.create(Numbers.this , R.raw.number_one);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mediaPlayer.start();
+            }
+        });
     }
 
 
