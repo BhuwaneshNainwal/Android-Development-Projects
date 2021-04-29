@@ -33,7 +33,7 @@ public class Word {
     private int mImageResourceId;
 
     /** Music Id **/
-    private int mMusicId;
+    private int mAudioResourceId;
 
     /**
      * Create a new Word object.
@@ -47,9 +47,14 @@ public class Word {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageId;
-        mMusicId = musicId;
+        mAudioResourceId = musicId;
     }
 
+    public Word(String defaultTranslation, String miwokTranslation , int musicId) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = musicId;
+    }
     /**
      * Get the default translation of the word.
      */
@@ -68,9 +73,9 @@ public class Word {
         return mImageResourceId;
     }
 
-    public int getmMusicId()
+    public int getmAudioResourceId()
     {
-        return mMusicId;
+        return mAudioResourceId;
     }
 
 } 

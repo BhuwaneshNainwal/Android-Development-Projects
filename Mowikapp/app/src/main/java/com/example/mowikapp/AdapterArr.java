@@ -56,6 +56,9 @@ public class AdapterArr extends ArrayAdapter<Word> {
                     R.layout.activity_list_item, parent, false);
         }
         // Get the {@link AndroidFlavor} object located at this position in the list
+
+
+
         Word currentAndroidFlavor = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID version_name
@@ -80,10 +83,7 @@ public class AdapterArr extends ArrayAdapter<Word> {
         //Play Button
         ImageView play = (ImageView) listItemView.findViewById(R.id.play);
         play.setImageResource(R.mipmap.icon);
-
-        int mMusicId = currentAndroidFlavor.getmMusicId();
-
-
+        
         int color = ContextCompat.getColor(getContext(), colorId);
         listItemView.setBackgroundColor(color);
 

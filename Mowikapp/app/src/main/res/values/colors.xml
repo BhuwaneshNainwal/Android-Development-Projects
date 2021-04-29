@@ -7,6 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="category_numbers">#05C625</color>
+    <color name="category_numbers">#03F123</color>
+    <color name="category_family">#FF9D07FA</color>
+    <color name="category_color">#FFDAB9</color>
+    <color name="category_phrases">#0000FF</color>
 
 </resources>

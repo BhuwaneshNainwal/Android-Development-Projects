@@ -43,10 +43,12 @@ public class Numbers extends AppCompatActivity {
         AdapterArr adapter = new AdapterArr(this , words , R.color.category_numbers);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapter);
-        MediaPlayer mediaPlayer = MediaPlayer.create(Numbers.this , R.raw.number_one);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Word word = words.get(position);
+                MediaPlayer mediaPlayer = MediaPlayer.create(Numbers.this , word.getmAudioResourceId());
                 mediaPlayer.start();
             }
         });

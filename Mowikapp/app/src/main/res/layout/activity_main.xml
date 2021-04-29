@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_700"
+    android:background="@color/white"
     android:orientation="vertical" >
     <TextView
         android:layout_height="90dp"
@@ -24,27 +24,29 @@
         android:id="@+id/number"
         android:paddingTop="10dp"
         android:textColor="@color/white"
-        android:background="#33cc33"
+        android:background="@color/category_numbers"
         android:text="Numbers"
         />
     <TextView
         android:layout_height="80dp"
         android:layout_width="match_parent"
         android:textSize="38sp"
+        android:id="@+id/family"
         android:paddingLeft="30dp"
         android:paddingTop="10dp"
         android:textColor="@color/white"
-        android:background="#cc33ff"
+        android:background="@color/category_family"
         android:text="Family Members" />
 
     <TextView
         android:layout_height="80dp"
         android:layout_width="match_parent"
         android:textSize="38sp"
+        android:id="@+id/color"
         android:paddingLeft="30dp"
         android:paddingTop="10dp"
         android:textColor="@color/white"
-        android:background="#cc0000"
+        android:background="@color/category_color"
         android:text="Colors" />
     <TextView
         android:layout_height="80dp"
@@ -53,7 +55,7 @@
         android:paddingLeft="30dp"
         android:paddingTop="10dp"
         android:textColor="@color/white"
-        android:background="#3366ff"
+        android:background="@color/category_phrases"
         android:text="Phrases" />
 
 </LinearLayout>

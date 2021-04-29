@@ -26,5 +26,28 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(numbersIntent);
             }
         });
+
+        TextView familyMembers = (TextView) findViewById(R.id.family);
+
+        // Set a click listener on that View
+        familyMembers.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the numbers View is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, familyMembers.class);
+                startActivity(numbersIntent);
+            }
+        });
+
+        TextView color = (TextView) findViewById(R.id.color);
+        color.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the numbers View is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, Colors.class);
+                startActivity(numbersIntent);
+            }
+        });
+
     }
 }
