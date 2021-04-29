@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MERE AASHIQ BHAIYO KE NAAM EK SONG"
+        android:textSize="19sp"
+        android:textColor="@color/purple_700"
+        />
+    <Button
+        android:layout_marginTop="8dp"
+        android:id = "@+id/play_button"
+        android:layout_width="wrap_content"
+        android:text="Play"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/random"
+        android:layout_height="wrap_content"
+    />
+    <Button
+        android:layout_marginTop="8dp"
+        android:id = "@+id/pause_button"
+        android:text="Pause"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/random"
+        />
+</LinearLayout>

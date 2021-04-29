@@ -15,6 +15,8 @@
  */
 package com.example.mowikapp;
 
+import androidx.annotation.RawRes;
+
 /**
  * {@link Word} represents a vocabulary word that the user wants to learn.
  * It contains a default translation and a Miwok translation for that word.
@@ -29,6 +31,10 @@ public class Word {
 
     /** Image resource ID **/
     private int mImageResourceId;
+
+    /** Music Id **/
+    private int mMusicId;
+
     /**
      * Create a new Word object.
      *
@@ -37,10 +43,11 @@ public class Word {
      * @param miwokTranslation is the word in the Miwok language
      * Image
      */
-    public Word(String defaultTranslation, String miwokTranslation , int imageId) {
+    public Word(String defaultTranslation, String miwokTranslation , int imageId , int musicId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageId;
+        mMusicId = musicId;
     }
 
     /**
@@ -59,6 +66,11 @@ public class Word {
 
     public int getmImageResourceId(){
         return mImageResourceId;
+    }
+
+    public int getmMusicId()
+    {
+        return mMusicId;
     }
 
 } 

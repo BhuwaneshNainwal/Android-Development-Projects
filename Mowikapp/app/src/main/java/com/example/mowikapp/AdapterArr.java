@@ -1,14 +1,18 @@
  package com.example.mowikapp;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
+import androidx.annotation.RawRes;
 import androidx.core.content.ContextCompat;
 
 import com.example.mowikapp.R;
@@ -70,8 +74,19 @@ public class AdapterArr extends ArrayAdapter<Word> {
         imageView.setImageResource(currentAndroidFlavor.getmImageResourceId());
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
+
+
+
+        //Play Button
+        ImageView play = (ImageView) listItemView.findViewById(R.id.play);
+        play.setImageResource(R.mipmap.icon);
+
+        int mMusicId = currentAndroidFlavor.getmMusicId();
+
+
         int color = ContextCompat.getColor(getContext(), colorId);
         listItemView.setBackgroundColor(color);
+
         return listItemView;
     }
-}
+};
