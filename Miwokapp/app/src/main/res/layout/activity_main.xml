@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <TextView
+        android:layout_height="90dp"
+        android:layout_width="match_parent"
+        android:textSize="45sp"
+        android:paddingLeft="60dp"
+        android:paddingTop="15dp"
+        android:textColor="#333300"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:background="#800000"
+        android:text="Miwok App" />
+
+    <TextView
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:textSize="38sp"
+        android:paddingLeft="30dp"
+        android:id="@+id/number"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:background="@color/category_numbers"
+        android:text="Numbers"
+        />
+    <TextView
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:textSize="38sp"
+        android:id="@+id/family"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:background="@color/category_family"
+        android:text="Family Members" />
+
+    <TextView
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:textSize="38sp"
+        android:id="@+id/color"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:background="@color/category_color"
+        android:text="Colors" />
+    <TextView
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:id="@+id/phrases"
+        android:textSize="38sp"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:background="@color/category_phrases"
+        android:text="Phrases" />
+
+</LinearLayout>
