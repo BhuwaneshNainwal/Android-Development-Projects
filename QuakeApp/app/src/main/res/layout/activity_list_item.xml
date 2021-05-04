@@ -9,31 +9,42 @@
 
 
     <TextView
+        android:id="@+id/magnitude"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/magnitude_circle"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        tools:text="10.9" />
+    <TextView
+        android:id="@+id/prefix"
         android:layout_width="0dp"
+        android:layout_marginLeft="3dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:id = "@+id/magnitude"
-        android:hint="2.4"
-         />
+        tools:text="km of" />
+
     <TextView
         android:layout_width="0dp"
         android:layout_weight="2"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:hint = "America"
-        android:id = "@+id/location"
+        android:id = "@+id/suffix"
         />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         tools:text="Mar 6, 2010" />
 
-        <TextView
+    <TextView
             android:id="@+id/time"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             tools:text="3:00 PM" />
 </LinearLayout>

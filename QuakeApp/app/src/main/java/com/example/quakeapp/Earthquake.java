@@ -2,7 +2,7 @@ package com.example.quakeapp;
 
 public class Earthquake {
 
-    private String mMagnitudeId;
+    private double mMagnitudeId;
 
     // Android version number (e.g. 2.3-2.7, 3.0-3.2.6, 4.0-4.0.4)
     private String mNameId;
@@ -12,6 +12,9 @@ public class Earthquake {
 
     private long mTimeInMilliseconds;
 
+    private String mPrefixId;
+
+    private String mSuffixId;
     /*
      * Create a new AndroidFlavor object.
      *
@@ -19,32 +22,37 @@ public class Earthquake {
      * @param vNumber is the corresponding Android version number (e.g. 2.3-2.7)
      * @param image is drawable reference ID that corresponds to the Android version
      * */
-    public Earthquake(String MagnitudeId , String nameId , long timeInMilliSeconds)
+    public Earthquake(double MagnitudeId , String prefix , String suffix , long timeInMilliSeconds)
     {
         mMagnitudeId = MagnitudeId;
-        mNameId = nameId;
+        mPrefixId = prefix;
+        mSuffixId = suffix;
         mTimeInMilliseconds = timeInMilliSeconds;
     }
 
     /**
      * Get the name of the Android version
      */
-    public String getmMagnitudeId() {
+    public double getmMagnitudeId() {
         return mMagnitudeId;
     }
 
     /**
      * Get the Android version number
      */
-    public String getmNameId() {
-        return mNameId;
-    }
 
     /**
      * Get the image resource ID
      */
     public long getTimeInMilliSeconds() {
         return mTimeInMilliseconds;
+    }
+
+    public String getmPrefixId() {
+        return mPrefixId;
+    }
+    public String getmSuffixId() {
+        return mSuffixId;
     }
 
 }

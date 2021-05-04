@@ -5,10 +5,14 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.graphics.drawable.GradientDrawable;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
+
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -44,6 +48,8 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
+
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
         if(listItemView == null) {
@@ -54,17 +60,42 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         // Get the {@link AndroidFlavor} object located at this position in the list
         Earthquake currentEarthquake = getItem(position);
 
+
+
+
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView magnitude = listItemView.findViewById(R.id.magnitude);
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
-        magnitude.setText(currentEarthquake.getmMagnitudeId());
+
+        // Set the proper background color on the magnitude circle.
+        // Fetch the background from the TextView, which is a GradientDrawable.
+
+
+
+        DecimalFormat magnitudeFormat = new DecimalFormat("0.0");
+        String mag = magnitudeFormat.format(currentEarthquake.getmMagnitudeId());
+        magnitude.setText(mag);
+
+        GradientDrawable magnitudeCircle = (GradientDrawable) magnitude.getBackground();
+
+        // Get the appropriate background color based on the current earthquake magnitude
+        int magnitudeColor = getMagnitudeColor(currentEarthquake.getmMagnitudeId());
+
+        // Set the color on the magnitude circle
+        magnitudeCircle.setColor(magnitudeColor);
 
         // Find the TextView in the list_item.xml layout with the ID version_number
-        TextView place = listItemView.findViewById(R.id.location);
+        TextView prefix = listItemView.findViewById(R.id.prefix);
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
-        place.setText(currentEarthquake.getmNameId());
+        prefix.setText(currentEarthquake.getmPrefixId());
+
+        TextView suffix = listItemView.findViewById(R.id.suffix);
+        // Get the version number from the current AndroidFlavor object and
+        // set this text on the number TextView
+        suffix.setText(currentEarthquake.getmSuffixId());
+
 
         // Create a new Date object from the time in milliseconds of the earthquake
         Date dateObject = new Date(currentEarthquake.getTimeInMilliSeconds());
@@ -85,6 +116,45 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
 
         return listItemView;
+    }
+
+    private int getMagnitudeColor(double magnitude) {
+        int magnitudeColorResourceId;
+        int magnitudeFloor = (int) Math.floor(magnitude);
+        switch (magnitudeFloor) {
+            case 0:
+            case 1:
+                magnitudeColorResourceId = R.color.magnitude1;
+                break;
+            case 2:
+                magnitudeColorResourceId = R.color.magnitude2;
+                break;
+            case 3:
+                magnitudeColorResourceId = R.color.magnitude3;
+                break;
+            case 4:
+                magnitudeColorResourceId = R.color.magnitude4;
+                break;
+            case 5:
+                magnitudeColorResourceId = R.color.magnitude5;
+                break;
+            case 6:
+                magnitudeColorResourceId = R.color.magnitude6;
+                break;
+            case 7:
+                magnitudeColorResourceId = R.color.magnitude7;
+                break;
+            case 8:
+                magnitudeColorResourceId = R.color.magnitude8;
+                break;
+            case 9:
+                magnitudeColorResourceId = R.color.magnitude9;
+                break;
+            default:
+                magnitudeColorResourceId = R.color.magnitude10plus;
+                break;
+        }
+        return ContextCompat.getColor(getContext() , magnitudeColorResourceId);
     }
 
 

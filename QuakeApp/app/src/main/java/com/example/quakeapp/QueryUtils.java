@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -61,10 +62,28 @@ public final class QueryUtils {
 
                 JSONObject currentEarthquake = earthquakeArray.getJSONObject(i);
                 JSONObject properties = currentEarthquake.getJSONObject("properties");
-                String magnitude = properties.getString("mag");
                 String location = properties.getString("place");
+                double magnitude = properties.getDouble("mag");
+
+                boolean checkPrefix = location.contains("of");
+                String prefix = "";
+                String suffix = "";
+
+                if(checkPrefix){
+                    int ind = location.indexOf("of");
+                    ind = ind + 2;
+                    prefix = location.substring(0 , ind);
+                    suffix = location.substring(ind + 1 , location.length());
+                }
+                else{
+
+                    prefix = "Near the ";
+                    suffix = location.substring(0 , location.length());
+                }
+
+
                 long time = properties.getLong("time");
-                Earthquake earthquake = new Earthquake(magnitude , location , time);
+                Earthquake earthquake = new Earthquake(magnitude , prefix , suffix , time);
                 earthquakes.add(earthquake);
             }
             // build up a list of Earthquake objects with the corresponding data.
