@@ -26,10 +26,10 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
      * The context is used to inflate the layout file, and the list is the data we want
      * to populate into the lists.
      *
-     * @param context        The current context. Used to inflate the layout file.
      * @param
+     * @param context        The current context. Used to inflate the layout file.
      */
-    public EarthquakeAdapter(Activity context, ArrayList<Earthquake> earthquake) {
+    public EarthquakeAdapter(MainActivity context, ArrayList<Earthquake> earthquake) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
         // the second argument is used when the ArrayAdapter is populating a single TextView.
         // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
@@ -113,8 +113,6 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         String formattedTime = formatTime(dateObject);
         // Display the time of the current earthquake in that TextView
         timeView.setText(formattedTime);
-
-
         return listItemView;
     }
 
