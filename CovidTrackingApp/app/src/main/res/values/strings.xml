@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CovidTrackingApp</string>
+    <string name="timePrefix"> &#160;at&#160; </string>
 </resources>

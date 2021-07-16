@@ -2,27 +2,38 @@ package com.example.covidtrackingapp;
 
 public class Covid {
 
-    private int totalcases;
-    private int totalactive;
-    private int totaldeaths;
+    private int cases;
+    private int active;
+    private int deaths;
+    private int recovery;
+    private String state;
 
-
-    public Covid(int totalcases , int totalactive , int totaldeaths)
+    public Covid(String state , int cases , int active , int deaths , int recovery)
     {
-        this.totalcases = totalcases;
-        this.totalactive = totalactive;
-        this.totaldeaths = totaldeaths;
+        this.cases = cases;
+        this.active = active;
+        this.deaths = deaths;
+        this.recovery = recovery;
+        this.state = state;
     }
     public int getmtotalcount() {
-        return totalcases;
+        return cases;
     }
 
     public int getmtotalactive() {
-        return totalactive;
+        return active;
     }
 
     public int getmtotaldeaths() {
-        return totaldeaths;
+        return deaths;
+    }
+
+
+    public int getmrecovery() {
+        return recovery;
+    }
+    public String getmstate() {
+        return state;
     }
 
 }

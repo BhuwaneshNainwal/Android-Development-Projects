@@ -43,22 +43,30 @@ public class CovidAdapter extends ArrayAdapter<Covid> {
         View listItemView = convertView;
         if(listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.activity_list_item, parent, false);
+                    R.layout.list_item_view, parent, false);
         }
 
         Covid current = getItem(position);
 
-        TextView totalCount = listItemView.findViewById(R.id.totalcount);
+        TextView statename = listItemView.findViewById(R.id.state);
+        String state = current.getmstate();
+        statename.setText(state);
+
+        TextView totalCount = listItemView.findViewById(R.id.total);
         int total = current.getmtotalcount();
         totalCount.setText(Integer.toString(total));
 
-        TextView totalActive = listItemView.findViewById(R.id.totalactivecount);
+        TextView totalActive = listItemView.findViewById(R.id.active);
         int active = current.getmtotalactive();
         totalActive.setText(Integer.toString(active));
 
-        TextView totalDeaths = listItemView.findViewById(R.id.totaldeathscount);
+        TextView totalDeaths = listItemView.findViewById(R.id.deceased);
         int deaths = current.getmtotaldeaths();
         totalDeaths.setText(Integer.toString(deaths));
+
+        TextView recovery = listItemView.findViewById(R.id.recovery);
+        int recover = current.getmrecovery();
+        recovery.setText(Integer.toString(recover));
 
         return listItemView;
     }
