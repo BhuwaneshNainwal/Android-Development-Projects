@@ -1,13 +1,21 @@
 package com.example.covidtrackingapp;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.work.Constraints;
+import androidx.work.NetworkType;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 import org.json.JSONArray;
@@ -17,9 +25,21 @@ import org.json.JSONObject;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.StringTokenizer;
+import java.util.concurrent.TimeUnit;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+import static java.util.concurrent.TimeUnit.MINUTES;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,17 +47,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         new CovidAsyncTask().execute("https://api.apify.com/v2/key-value-stores/toDWvRj1JpTXiM8FF/records/LATEST?disableRedirect=true");
-    }
-    private class CovidAsyncTask extends AsyncTask<String, Void, String> {
-        ProgressDialog progress = new ProgressDialog(MainActivity.this);
 
+        Button button;
+
+            button = (Button) findViewById(R.id.button);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openNewActivity();
+                }
+            });
+        }
+        public void openNewActivity(){
+            Intent intent = new Intent(this, CowinActivity.class);
+            startActivity(intent);
+        }
+
+    private class CovidAsyncTask extends AsyncTask<String, Void, String> {
+        ProgressDialog progress = new ProgressDialog(MainActivity.this , ProgressDialog.THEME_HOLO_DARK);
         ArrayList<Covid> covid = new ArrayList<>();
+
         @Override
         protected void onPreExecute() {
-            progress.setMessage("Fetching data , Please wait...");
-            progress.show();
+            this.progress.setMessage("Please wait");
+            this.progress.setCancelable(false);
+            this.progress.show();
+            // email ID of Recipient.
+
         }
 
         protected String doInBackground(String... apiUrl) {
@@ -71,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
                 return "Exception: " + e.getMessage();
             }
+
             try {
 
                 JSONObject baseJsonResponse = new JSONObject(current);
@@ -95,6 +133,9 @@ public class MainActivity extends AppCompatActivity {
                     covid.add(c);
                 }
 
+
+
+
                 return last;
             } catch (JSONException e) {
                 // If an error is thrown when executing any of the above statements in the "try" block,
@@ -112,18 +153,17 @@ public class MainActivity extends AppCompatActivity {
             // Try to parse the SAMPLE_JSON_RESPONSE. If there's a problem with the way the JSON
             // is formatted, a JSONException exception object will be thrown.
             // Catch the exception so the app doesn't crash, and print the error message to the logs.
-
             if (progress.isShowing()) {
                 progress.dismiss();
             }
             // create StringTokenizer object
-            StringTokenizer st = new StringTokenizer(result , " ");
+            StringTokenizer st = new StringTokenizer(result, " ");
 
             // create ArrayList object
-            ArrayList<String> list=new ArrayList<String>();
+            ArrayList<String> list = new ArrayList<String>();
 
             // iterate through StringTokenizer tokens
-            while(st.hasMoreTokens()) {
+            while (st.hasMoreTokens()) {
 
                 // add tokens to AL
                 list.add(st.nextToken());
@@ -143,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
             CovidAdapter covidadapter = new CovidAdapter(MainActivity.this, covid);
             ListView listView = findViewById(R.id.listView);
             listView.setAdapter(covidadapter);
+
         }
     }
 

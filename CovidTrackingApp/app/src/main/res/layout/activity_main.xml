@@ -4,31 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:background="#FF9800"
     android:id="@+id/list"
     android:orientation="vertical" >
+
     <TextView
         android:id="@+id/india"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="42dp"
         android:textSize="30sp"
+        android:background="@drawable/ripple4"
         android:textColor="#000000"
-        android:text="INDIA" />
-
-    <ImageView
-        android:layout_marginTop="8dp"
+        android:text="INDIA STATS" />
+    <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:background="@drawable/india" />
-
+        android:gravity="center"
+        android:layout_height="42dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:text="New" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lastupdate"
-        android:textSize="14sp"
-        android:background="@android:color/holo_blue_light"
+        android:textSize="8sp"
+        android:background="@drawable/ripple3"
+        android:padding="4dp"
         android:layout_gravity="end"
         android:textColor="@color/black"
         android:hint="Lastly updated at 00:00 IST"
@@ -37,7 +41,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/ripple1"
         android:layout_gravity="center"
         android:orientation="horizontal" >
 
@@ -53,17 +58,17 @@
                 android:layout_height="50dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
-                android:textColor="#000000"
+                android:textColor="#B388FF"
                 android:hint="000000000"
                 android:textSize="15sp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="2dp"
                 tools:text="0" />
             <TextView
                 android:id="@+id/totalcases"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="#000000"
+                android:textColor="#B388FF"
                 android:text="TOTAL"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
@@ -85,7 +90,7 @@
                 android:gravity="center"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="2dp"
                 tools:text="0" />
             <TextView
                 android:id="@+id/totalactive"
@@ -113,16 +118,16 @@
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:hint="000000000"
-                android:textColor="#000000"
+                android:textColor="@color/red"
                 android:textSize="15sp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="2dp"
                 tools:text="0" />
             <TextView
                 android:id="@+id/totaldeaths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="#000000"
+                android:textColor="@color/red"
                 android:text="DECEASED"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
@@ -144,9 +149,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/state"
-            android:textSize="32sp"
+            android:textSize="28sp"
             android:textColor="#000000"
-            android:background="#FFFFFF"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-thin"
+            android:background="@drawable/ripple"
             android:gravity="center"
             android:text="STATE WISE DATA"
             android:layout_marginTop="2dp"
@@ -156,7 +163,7 @@
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
 
