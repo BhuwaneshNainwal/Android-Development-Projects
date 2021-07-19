@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
+    android:background="#B2DFDB"
     android:orientation="vertical" >
 
 <LinearLayout
@@ -12,17 +13,31 @@
         android:background="@drawable/ripple4"
         android:orientation="horizontal" >
 
-<TextView
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="57dp"
+        android:background="@drawable/emailicon"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+    <TextView
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="58dp"
     android:text="Email"
+    android:padding="10dp"
     android:textColor="@color/black"
     android:textSize="30sp"
     />
+
+
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:padding="13dp"
+        android:hint="xyz@gmail.com"
+        android:textColorHint="#9E9E9E"
         android:id="@+id/email"
         />
 </LinearLayout>
@@ -36,11 +51,18 @@
         android:layout_marginTop="20dp"
         android:orientation="horizontal" >
 
+        <ImageView
+            android:layout_width="43dp"
+            android:layout_height="57dp"
+            android:background="@drawable/countryicon"
+            android:textColor="@color/black"
+            />
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="59dp"
             android:text="State"
-
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="30sp"
             />
@@ -48,6 +70,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:hint="Delhi"
+            android:padding="13dp"
+            android:textColorHint="#9E9E9E"
             android:id="@+id/state"
             />
     </LinearLayout>
@@ -59,10 +84,18 @@
     android:background="@drawable/ripple4"
     android:orientation="horizontal" >
 
+    <ImageView
+        android:layout_width="43dp"
+        android:layout_height="57dp"
+        android:background="@drawable/locationicon"
+        android:textColor="@color/black"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="District"
+        android:padding="10dp"
         android:textColor="@color/black"
         android:textSize="30sp"
         />
@@ -71,31 +104,37 @@
         android:layout_height="wrap_content"
         android:layout_gravity=""
         android:layout_marginLeft="20dp"
+        android:hint="South Delhi"
+        android:textColorHint="#9E9E9E"
+        android:padding="13dp"
         android:id="@+id/district"
         />
 </LinearLayout>
     <Button
     android:id="@+id/buttonsubmit"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="100dp"
+    android:layout_height="50dp"
     android:layout_marginTop="16dp"
     android:textColor="@color/black"
-    android:backgroundTint="@color/cardview_shadow_start_color"
+    android:layout_gravity="center_horizontal"
+    android:backgroundTint="#00B0FF"
     android:text="Submit" />
 <Button
         android:id="@+id/buttoncancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:textColor="@color/black"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="#00B0FF"
+        android:layout_gravity="center_horizontal"
         android:text="Cancel" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NOTE : Allow less secure app to get notified through Gmail"
+        android:text="NOTE :Turn on less secure app to get notified through Gmail and do not forget to allow auto start for the app in the moble settings"
+
         android:layout_marginTop="16dp"
         android:textColor="@color/red"
 

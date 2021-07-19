@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="button" type="id" />
+    <item name="lastupdate" type="id" />
+    <item name="totalcount" type="id" />
+    <item name="totalcases" type="id" />
+    <item name="totalactivecount" type="id" />
+    <item name="totalactive" type="id" />
+    <item name="totaldeathscount" type="id" />
+    <item name="totaldeaths" type="id" />
+    <item name="state_list" type="id" />
+    <item name="listView" type="id" />
+</resources>

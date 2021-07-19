@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#FF8F00"
+    android:id="@+id/list"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/india"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="42dp"
+        android:textSize="30sp"
+        android:background="@drawable/ripple4"
+        android:textColor="#000000"
+        android:text="INDIA STATS" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastupdate"
+        android:textSize="8sp"
+        android:background="@drawable/ripple3"
+        android:padding="4dp"
+        android:layout_gravity="end"
+        android:textColor="@color/black"
+        android:hint="NIL"
+        android:layout_marginTop="12dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/ripple1"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/totalcount"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:textColor="#B388FF"
+                android:hint="NIL"
+                android:textSize="15sp"
+                android:layout_marginTop="2dp"
+                tools:text="0" />
+            <TextView
+                android:id="@+id/totalcases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#B388FF"
+                android:text="TOTAL"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/totalactivecount"
+                android:layout_width="wrap_content"
+                android:hint="NIL"
+                android:layout_height="50dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:layout_marginTop="2dp"
+                tools:text="0" />
+            <TextView
+                android:id="@+id/totalactive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:text="ACTIVE"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/totaldeathscount"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:hint="NIL"
+                android:textColor="@color/red"
+                android:textSize="15sp"
+                android:layout_marginTop="2dp"
+                tools:text="0" />
+            <TextView
+                android:id="@+id/totaldeaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/red"
+                android:text="DECEASED"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:id="@+id/state_list"
+        android:textStyle="bold"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/state"
+            android:textSize="28sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-thin"
+            android:background="@drawable/ripple"
+            android:gravity="center"
+            android:text="STATE WISE DATA"
+            android:layout_marginTop="2dp"
+            />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>
