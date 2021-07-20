@@ -221,11 +221,13 @@ public class SlotCheck extends Worker {
                 int dose1 = sessions.getJSONObject(0).getInt("available_capacity_dose1");
 
                 int dose2 = sessions.getJSONObject(0).getInt("available_capacity_dose2");
+                String date = sessions.getJSONObject(0).getString("date");
 
                 body = body + "District : " + districtName + '\n' + "Center Name : " + centerName + '\n' + "Center Address : " + centerAddress + '\n' + "Block : " + block + '\n' + "Pin Code : " + pinCode
-                + '\n' + "Minimum Age Limit : " + minimumAge + "\n" + "Vaccine Type : " + vaccineType + "\n" + "Dose1 Slots : " + dose1 +  " and " + "Dose2 Slots : " + dose2 + '\n' + "Fee type : " + fee;
+                + '\n' + "Minimum Age Limit : " + minimumAge + "\n" + "Vaccine Type : " + vaccineType + "\n" + "Dose1 Slots : " + dose1 +  " and " + "Dose2 Slots : " + dose2 + '\n' + "Fee type : " + fee +
+                '\n' + "Date : " + date;
 
-                body = body + "\n\n\n\n\n";
+                body = body + "\n\n\n\n";
             }
         }
 

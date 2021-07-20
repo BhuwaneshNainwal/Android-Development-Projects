@@ -1,21 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="#B2DFDB"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BBDEFB"
     android:orientation="vertical" >
 
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#BBDEFB"
+        android:padding="1dp"
+        android:orientation="vertical" >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:src="@drawable/vaccine"
+        android:padding="3dp"
+        android:background="@drawable/imageborder"
+        android:scaleType="fitXY"
+        android:textColor="@color/black" />
+    </LinearLayout>
 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:layout_margin="20dp"
+        android:padding="2dp"
         android:background="@drawable/ripple4"
         android:orientation="horizontal" >
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
         android:background="@drawable/emailicon"
         android:textColor="@color/black"
         android:textSize="10sp" />
@@ -23,7 +49,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="8dp"
         android:text="Email"
         android:textColor="@color/black"
         android:textSize="20sp" />
@@ -46,20 +72,21 @@
         android:layout_width="match_parent"
         android:background="@drawable/ripple4"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_margin="20dp"
         android:padding="4dp"
         android:orientation="horizontal" >
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
             android:background="@drawable/countryicon"
             android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="8dp"
             android:text="State"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -76,15 +103,17 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="50dp"
-    android:padding="4dp"
+    android:layout_margin="20dp"
+    android:padding="3dp"
     android:background="@drawable/ripple4"
     android:orientation="horizontal" >
 
     <ImageView
         android:layout_width="49dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+
         android:background="@drawable/locationicon"
         android:textColor="@color/black" />
 
@@ -111,7 +140,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
          >
 
@@ -122,28 +151,29 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-3dp"
-        android:backgroundTint="#00B0FF"
+        android:backgroundTint="#F57F17"
         android:text="Submit"
         android:textColor="@color/black"
         android:textSize="15sp"
         />
 
-    <Button
-        android:id="@+id/buttoncancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#D32F2F"
-        android:text="Cancel"
-        android:textColor="@color/black"
-        android:textSize="15sp" />
+        <Button
+            android:id="@+id/buttoncancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#D32F2F"
+            android:text="Cancel"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
     </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:layout_marginTop="10dp"
         android:text="NOTE :Turn on less secure app to get notified through Gmail and do not forget to allow auto start for the app in the moble settings"
-        android:layout_marginTop="16dp"
         android:textColor="@color/red"
 
         />
@@ -154,6 +184,8 @@
         android:text="https://myaccount.google.com/lesssecureapps"
         android:autoLink="web"
         android:id="@+id/infoTxtCredits"
-        android:linksClickable="true"></TextView>
+        android:padding="4dp"
+        android:linksClickable="true"/>
 
 </LinearLayout>
+</ScrollView>

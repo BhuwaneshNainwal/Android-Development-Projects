@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:background="#FF8F00"
+    android:background="#D1C4E9"
     android:id="@+id/list"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/india"
+    <ImageView
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="42dp"
-        android:textSize="30sp"
-        android:background="@drawable/ripple4"
-        android:textColor="#000000"
-        android:text="INDIA STATS" />
+        android:layout_height="220dp"
+        android:src="@drawable/staysafe"
+        android:padding="5dp"
+        android:background="@drawable/imageborder"
+        android:scaleType="fitXY"
+        android:textColor="@color/black" />
 
 
     <TextView
@@ -142,14 +147,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/state"
-            android:textSize="28sp"
+            android:textSize="23sp"
             android:textColor="#000000"
             android:textStyle="bold"
             android:fontFamily="sans-serif-thin"
             android:background="@drawable/ripple"
             android:gravity="center"
             android:text="STATE WISE DATA"
-            android:layout_marginTop="2dp"
+            android:layout_margin="5dp"
+
             />
 
     </LinearLayout>
@@ -161,3 +167,4 @@
         />
 
 </LinearLayout>
+</ScrollView>

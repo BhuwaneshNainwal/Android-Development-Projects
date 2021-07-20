@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Patterns;
@@ -30,7 +32,6 @@ public class CowinActivity extends AppCompatActivity
 
         private Button msubmit;
         private Button mcancel;
-
 
 
         @Override

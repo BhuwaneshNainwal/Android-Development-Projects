@@ -1,36 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:orientation="vertical" >
+    android:background="#E0E0E0"
+    >
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WELCOME!"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/ripple5"
-        android:textSize="70sp"
-        android:textColor="@color/black"
-        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#2196F3"
         />
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="150dp"
+        android:gravity="center_horizontal"
+        android:paddingTop="65dp"
+        android:layout_marginTop="150dp"
+        android:text="COVID LIVE UPDATE"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/ripple5" />
 
     <Button
         android:id="@+id/india"
-        android:layout_width="150dp"
+        android:layout_width="190dp"
         android:layout_height="50dp"
-        android:layout_marginTop="160dp"
+        android:backgroundTint="#ECEFF1"
+        android:text="GO"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="150dp"
+        android:gravity="center_horizontal"
+        android:paddingTop="65dp"
+        android:textStyle="bold"
+        android:layout_marginTop="120dp"
+        android:text="VACCINATION SLOTS"
         android:textColor="@color/black"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#81D4FA"
-        android:text="INDIA STATS" />
+        android:background="@drawable/ripple5" />
     <Button
         android:id="@+id/slotcheck"
-        android:layout_width="150dp"
+        android:layout_width="190dp"
         android:layout_height="50dp"
-        android:textColor="@color/black"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#C6FF00"
-        android:text="SLOT CHECK" />
-</LinearLayout>
+        android:backgroundTint="#ECEFF1"
+        android:text="GO"
+        android:textColor="@color/black" />
+
+    </LinearLayout>
+</RelativeLayout>
