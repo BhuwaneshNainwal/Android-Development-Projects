@@ -3,6 +3,7 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -151,7 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-3dp"
-        android:backgroundTint="#F57F17"
+        android:backgroundTint="#FAFAFA"
         android:text="Submit"
         android:textColor="@color/black"
         android:textSize="15sp"
@@ -171,9 +172,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:padding="8dp"
+        android:id="@+id/ins"
         android:layout_marginTop="10dp"
-        android:text="NOTE :Turn on less secure app to get notified through Gmail and do not forget to allow auto start for the app in the moble settings"
+        android:text="NOTE : Turn on less secure app to get notified through Gmail , allow Autostart and set battery saver to no restrictions for the app in the mobile settings"
         android:textColor="@color/red"
 
         />

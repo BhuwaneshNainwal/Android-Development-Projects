@@ -10,7 +10,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D1C4E9"
+    android:background="#FCE4EC"
     android:id="@+id/list"
     android:orientation="vertical" >
 
@@ -54,12 +54,13 @@
                 android:id="@+id/totalcount"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:textColor="#B388FF"
-                android:hint="NIL"
-                android:textSize="15sp"
                 android:layout_marginTop="2dp"
+                android:fontFamily="sans-serif-medium"
+
+                android:gravity="center"
+                android:hint="NIL"
+                android:textColor="#B388FF"
+                android:textSize="15sp"
                 tools:text="0" />
             <TextView
                 android:id="@+id/totalcases"

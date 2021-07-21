@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Shader;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Patterns;
@@ -37,11 +38,27 @@ public class CowinActivity extends AppCompatActivity
         @Override
         protected void onCreate(Bundle savedInstanceState) {
 
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cowin);
 
+
+        TextView textView = findViewById(R.id.ins);
+        Typeface typeface = Typeface.createFromAsset(
+                getAssets(),
+                "dance.ttf");
+        textView.setTypeface(typeface);
+
+
+
+
+
         msubmit = findViewById(R.id.buttonsubmit);
         mcancel = findViewById(R.id.buttoncancel);
+
+
+
 
         EditText emailText = (EditText) findViewById(R.id.email);
         EditText stateText = (EditText) findViewById(R.id.state);
