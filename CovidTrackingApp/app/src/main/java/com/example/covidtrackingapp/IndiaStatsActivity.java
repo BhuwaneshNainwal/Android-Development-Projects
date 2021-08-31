@@ -49,8 +49,7 @@ public class IndiaStatsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_india_stats);
 
-
-
+        
         new CovidAsyncTask().execute("https://api.apify.com/v2/key-value-stores/toDWvRj1JpTXiM8FF/records/LATEST?disableRedirect=true");
 
 
@@ -66,7 +65,6 @@ public class IndiaStatsActivity extends AppCompatActivity {
             this.progress.setMessage("Please wait");
             this.progress.setCancelable(false);
             this.progress.show();
-            // email ID of Recipient.
 
         }
 
