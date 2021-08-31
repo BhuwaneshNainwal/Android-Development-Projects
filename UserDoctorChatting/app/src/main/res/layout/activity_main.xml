@@ -101,6 +101,19 @@
                 android:textSize="15sp"
                 />
 
+            <Button
+                android:id="@+id/showActiveDoctors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="103dp"
+                android:backgroundTint="#FAFAFA"
+                android:text="Active Doctors"
+                android:onClick="goToActiveListActivity"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                />
+
         </RelativeLayout>
 
     </LinearLayout>

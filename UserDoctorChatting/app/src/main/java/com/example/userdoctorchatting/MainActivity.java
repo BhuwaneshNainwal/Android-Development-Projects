@@ -67,4 +67,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void goToActiveListActivity(View v)
+    {
+        Intent i = new Intent(MainActivity.this , ShowUsersDynamicActiveList.class);
+        startActivity(i);
+    }
+
 };

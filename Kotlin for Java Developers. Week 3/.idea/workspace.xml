@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f0db5429-d588-43a8-97d0-e2408880086f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/6.1.1/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/6.1.1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/Mastermind/Task/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/Mastermind/lesson-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/course-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 2/local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nice String/Task/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nice String/lesson-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taxi Park/Task/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taxi Park/lesson-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/course-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 4/Board/Task/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 4/Board/lesson-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 4/Rationals/Task/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 4/Rationals/lesson-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 5/Games/Task/task-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 5/Games/lesson-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kotlin for Java Developers. Week 5/course-info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Miwokapp/app/src/main/java/com/example/MiwokApp/Assignment1.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ShowUsersActiveDoctorsList/app/src/main/java/com/example/showusersactivedoctorslist/Adapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ShowUsersActiveDoctorsList/app/src/main/java/com/example/showusersactivedoctorslist/list_item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ShowUsersActiveDoctorsList/app/src/main/java/com/example/showusersactivedoctorslist/show_active_doctors_list.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ShowUsersActiveDoctorsList/app/src/main/res/layout/activity_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ShowUsersActiveDoctorsList/app/src/main/res/layout/activity_show_active_doctors_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/java/com/example/userdoctorchatting/Adapters/AdapterToShowActiveDoctors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/java/com/example/userdoctorchatting/Group.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/java/com/example/userdoctorchatting/ListItemsToShowUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/java/com/example/userdoctorchatting/ShowUsersDynamicActiveList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/res/layout/activity_list_items_to_show_users.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/res/layout/activity_show_users_dynamic_active_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/java/com/example/userdoctorchatting/Adapters/MessageAdapters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/java/com/example/userdoctorchatting/ChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../UserDoctorChatting/app/src/main/java/com/example/userdoctorchatting/ChatActivity.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1xUwje8juT75q6QAQuk21Km7p03" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ShowUsersActiveDoctorsList" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.inlinked.gradle.project.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f0db5429-d588-43a8-97d0-e2408880086f" name="Default Changelist" comment="" />
+      <created>1630423110515</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630423110515</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="422" y="95" key="FileChooserDialogImpl" timestamp="1630428881318">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="422" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1630428881318" />
+  </component>
+</project>
