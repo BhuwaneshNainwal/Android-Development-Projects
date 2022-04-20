@@ -15,10 +15,5 @@ public class Instructions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.instructions);
 
-//        TextView textView = findViewById(R.id.ins);
-//        Typeface typeface = Typeface.createFromAsset(
-//                getAssets(),
-//                "dancing.ttf");
-//        textView.setTypeface(typeface);
     }
 }

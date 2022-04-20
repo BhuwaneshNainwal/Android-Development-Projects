@@ -63,6 +63,7 @@ public class CowinActivity extends AppCompatActivity
         EditText emailText = (EditText) findViewById(R.id.email);
         EditText stateText = (EditText) findViewById(R.id.state);
         EditText districtText = (EditText) findViewById(R.id.district);
+        EditText vaccineText = (EditText)findViewById(R.id.tovaccine);
         final SharedPreferences prefs = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
 
             msubmit.setVisibility(prefs.getBoolean("submit", true) ? View.VISIBLE : View.INVISIBLE);
@@ -108,7 +109,16 @@ public class CowinActivity extends AppCompatActivity
                     return;
                 }
 
-                name = "";
+                name = vaccineText.getText().toString();
+                if(!name.equals("COVAXIN") && !name.equals("COVISHIELD"))
+                {
+                    Context context = getApplicationContext();
+                    CharSequence text = "Invalid Vaccine Type";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    return;
+                }
                 name = districtText.getText().toString();
                 if(name.matches("")){
                     Context context = getApplicationContext();
@@ -148,7 +158,7 @@ public class CowinActivity extends AppCompatActivity
 
                 send = new PeriodicWorkRequest.Builder(SlotCheck.class , 16 , TimeUnit.MINUTES).addTag("SendMail").setInputData(
                         new Data.Builder()
-                                .putString("email", emailText.getText().toString()).putString("state", stateText.getText().toString()).putString("district", districtText.getText().toString())
+                                .putString("email", emailText.getText().toString()).putString("state", stateText.getText().toString()).putString("district", districtText.getText().toString()).putString("vaccine type", vaccineText.getText().toString())
                                 .build()).build();
                 WorkManager.getInstance().enqueue(send);
             }
@@ -193,14 +203,16 @@ public class CowinActivity extends AppCompatActivity
          EditText emailText = (EditText) findViewById(R.id.email);
          EditText stateText = (EditText) findViewById(R.id.state);
          EditText districtText = (EditText) findViewById(R.id.district);
+         EditText vaccineText = (EditText)findViewById(R.id.tovaccine);
          SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
          String s1 = sh.getString("email", "");
          String s2 = sh.getString("state", "");
          String s3 = sh.getString("district", "");
-
+         String s4 = sh.getString("vaccine type", "");
          emailText.setText(s1);
          stateText.setText(s2);
          districtText.setText(s3);
+         vaccineText.setText(s4);
      }
 
      @Override
@@ -216,11 +228,13 @@ public class CowinActivity extends AppCompatActivity
              EditText emailText = (EditText) findViewById(R.id.email);
              EditText stateText = (EditText) findViewById(R.id.state);
              EditText districtText = (EditText) findViewById(R.id.district);
+             EditText vaccineText = (EditText)findViewById(R.id.tovaccine);
 
              // write all the data entered by the user in SharedPreference and apply
              myEdit.putString("email", emailText.getText().toString());
              myEdit.putString("state", stateText.getText().toString());
              myEdit.putString("district", districtText.getText().toString());
+             myEdit.putString("vaccine type" , vaccineText.getText().toString());
              myEdit.apply();
          }
 

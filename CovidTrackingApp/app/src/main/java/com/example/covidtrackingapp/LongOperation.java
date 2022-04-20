@@ -35,7 +35,7 @@ public class LongOperation extends AsyncTask<Void, Void, String> {
 
         try {
 
-            GMailSender sender = new GMailSender("linuxkali1947@gmail.com", "Harshit@123");
+            GMailSender sender = new GMailSender("teamabsforever@gmail.com", "Harshit@123");
 
 
             sender.sendMail("This is a testing mail",
@@ -44,7 +44,7 @@ public class LongOperation extends AsyncTask<Void, Void, String> {
                     "This is Body of testing mail","linuxkali1947@gmail.com",
 
 
-                    "linuxkali1947@gmail.com")                   ;
+                    "teamabsforever@gmail.com")                   ;
 
 
 

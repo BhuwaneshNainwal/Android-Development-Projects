@@ -34,7 +34,7 @@
 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:padding="2dp"
         android:background="@drawable/ripple4"
         android:orientation="horizontal" >
@@ -73,7 +73,7 @@
         android:layout_width="match_parent"
         android:background="@drawable/ripple4"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:padding="4dp"
         android:orientation="horizontal" >
 
@@ -104,7 +104,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
+    android:layout_margin="10dp"
     android:padding="3dp"
     android:background="@drawable/ripple4"
     android:orientation="horizontal" >
@@ -136,6 +136,41 @@
         android:textColorHint="#9E9E9E"
         android:textSize="15sp" />
 </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="3dp"
+        android:background="@drawable/ripple4"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="49dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/locationicon"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Vaccine Type"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/tovaccine"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity=""
+            android:layout_marginLeft="20dp"
+            android:hint="Covaxin"
+            android:textColorHint="#9E9E9E"
+            android:textSize="15sp" />
+    </LinearLayout>
 
 
     <RelativeLayout

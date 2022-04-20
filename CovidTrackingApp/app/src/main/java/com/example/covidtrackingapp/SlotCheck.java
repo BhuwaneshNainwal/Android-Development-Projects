@@ -30,14 +30,16 @@ public class SlotCheck extends Worker {
         super(context, workerParams);
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @NonNull
     @Override
     public Result doWork() {
         String email = getInputData().getString("email");
         String state = getInputData().getString("state");
-
         String district = getInputData().getString("district");
+        String vaccine = getInputData().getString("vaccine type");
+
         String input = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=";
         String stateUrl = "https://cdn-api.co-vin.in/api/v2/admin/location/states";
 
@@ -49,10 +51,9 @@ public class SlotCheck extends Worker {
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
         Date todayDate = new Date();
         String thisDate = currentDate.format(todayDate);
-        Log.d("date",  thisDate);
 
         input = input + districtId + "&date=" + thisDate;
-        fetchData(input , email);
+        fetchData(input , email , vaccine);
         return Result.success();
     }
 
@@ -170,7 +171,7 @@ public class SlotCheck extends Worker {
         return -1;
     }
 
-    private void fetchData(String input , String recept) {
+    private void fetchData(String input , String recept , String vaccine) {
         String body = "";
         String subject = "Vaccine slot found!";
         String current = "";
@@ -223,6 +224,10 @@ public class SlotCheck extends Worker {
                 int dose2 = sessions.getJSONObject(0).getInt("available_capacity_dose2");
                 String date = sessions.getJSONObject(0).getString("date");
 
+                if(!vaccineType.equals(vaccine) || (dose1 == 0 && dose2 == 0))
+                    continue;
+
+
                 body = body + "District : " + districtName + '\n' + "Center Name : " + centerName + '\n' + "Center Address : " + centerAddress + '\n' + "Block : " + block + '\n' + "Pin Code : " + pinCode
                 + '\n' + "Minimum Age Limit : " + minimumAge + "\n" + "Vaccine Type : " + vaccineType + "\n" + "Dose1 Slots : " + dose1 +  " and " + "Dose2 Slots : " + dose2 + '\n' + "Fee type : " + fee +
                 '\n' + "Date : " + date;
@@ -236,7 +241,6 @@ public class SlotCheck extends Worker {
                 // If an error is thrown when executing any of the above statements in the "try" block,
                 // catch the exception here, so the app doesn't crash. Print a log message
                 // with the message from the exception.
-                Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
             }
 
             if(body.length() > 0)
@@ -244,13 +248,13 @@ public class SlotCheck extends Worker {
 
                 try {
 
-                    GMailSender sender = new GMailSender("linuxkali1947@gmail.com", "Harshit@123");
+                    GMailSender sender = new GMailSender("teamabsforever@gmail.com", "Harshit@123");
 
 
                     sender.sendMail(subject,
 
 
-                            body ,"linuxkali1947@gmail.com",
+                            body ,"teamabsforever@gmail.com",
 
 
                             recept);
