@@ -10,7 +10,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -169,16 +168,17 @@ class ContestAdapter implements ListAdapter {
                         int minutes = Integer.parseInt(contest.getStartTime().substring(19, 21));
 
                         Calendar c = Calendar.getInstance();
-                        c.set(Calendar.MONTH,month - 1);
-                        c.set(Calendar.YEAR,year);
-                        c.set(Calendar.DAY_OF_MONTH, date);
-                        c.set(Calendar.HOUR_OF_DAY,hour);
-                        c.set(Calendar.MINUTE,minutes);
-                        c.set(Calendar.SECOND,0);
-                        c.add(Calendar.MINUTE, -11);
-
+                        c.setTimeInMillis(System.currentTimeMillis());
+                        c.set(year, month - 1, date, hour, minutes - 10, 0);
                         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-                        alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+
+                        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O){
+
+                            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+                        }
+                        else {
+                            alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+                        }
                     }
                 });
 
@@ -205,7 +205,7 @@ class ContestAdapter implements ListAdapter {
                     @Override
                     public void onClick(View v) {
 
-                        Toast.makeText(context,"You will be notified 10 minutes before",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "You will be notified 10 minutes before", Toast.LENGTH_SHORT).show();
                         image.setEnabled(false);
                         new Handler().postDelayed(new Runnable() {
 
@@ -214,35 +214,33 @@ class ContestAdapter implements ListAdapter {
                                 image.setEnabled(true);
 
                             }
-                        },3000);// set time as per your requirement
+                        }, 3000);// set time as per your requirement
 
-                            notificationTittle = tittle.getText().toString();
-                            Intent intent = new Intent(context, ReminderBroadcast.class);
-                            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+                        notificationTittle = tittle.getText().toString();
+                        Intent intent = new Intent(context, ReminderBroadcast.class);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
 
-                            DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM")
-                                    .withLocale(Locale.ENGLISH);
-                            int month = parser.parse(contest.getStartTime().substring(3, 6)).get(ChronoField.MONTH_OF_YEAR);
-                            int date = Integer.parseInt(contest.getStartTime().substring(0, 2));
-                            int year = Integer.parseInt(contest.getStartTime().substring(7, 11));
-                            int hour = Integer.parseInt(contest.getStartTime().substring(16, 18));
-                            int minutes = Integer.parseInt(contest.getStartTime().substring(19, 21));
+                        DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM")
+                                .withLocale(Locale.ENGLISH);
+                        int month = parser.parse(contest.getStartTime().substring(3, 6)).get(ChronoField.MONTH_OF_YEAR);
+                        int date = Integer.parseInt(contest.getStartTime().substring(0, 2));
+                        int year = Integer.parseInt(contest.getStartTime().substring(7, 11));
+                        int hour = Integer.parseInt(contest.getStartTime().substring(16, 18));
+                        int minutes = Integer.parseInt(contest.getStartTime().substring(19, 21));
 
-                            Log.d("DHOONDLE", String.valueOf(minutes));
+                        Calendar c = Calendar.getInstance();
+                        c.setTimeInMillis(System.currentTimeMillis());
+                        c.set(year, month - 1, date, hour, minutes - 10, 0);
+                        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-                            Calendar c = Calendar.getInstance();
-                            c.set(Calendar.MONTH,month - 1);
-                            c.set(Calendar.YEAR,year);
-                            c.set(Calendar.DAY_OF_MONTH, date);
-                            c.set(Calendar.HOUR_OF_DAY,hour);
-                            c.set(Calendar.MINUTE,minutes);
-                            c.set(Calendar.SECOND,0);
-                            c.add(Calendar.MINUTE, -11);
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
 
-                            AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+                            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+
+                        } else {
                             alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
                         }
-
+                    }
 
                 });
 

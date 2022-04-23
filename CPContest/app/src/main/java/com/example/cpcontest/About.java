@@ -24,6 +24,13 @@ public class About extends AppCompatActivity {
         link.setText(Html.fromHtml(str_text));
         link.setLinkTextColor(Color.BLUE);
 
+        String str_text1 = "<a href=https://lovepik.com/images/png-bell.html> Bell Png vectors by Lovepik.com </a>";
+        TextView link1;
+        link1 = (TextView) findViewById(R.id.credits);
+        link1.setMovementMethod(LinkMovementMethod.getInstance());
+        link1.setText(Html.fromHtml(str_text1));
+        link1.setLinkTextColor(Color.BLUE);
+
     }
 }
 

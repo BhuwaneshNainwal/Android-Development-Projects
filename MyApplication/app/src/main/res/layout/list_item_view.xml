@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list"
+        android:background="#EDE7F6"
+        android:orientation="vertical" >
+        <ImageView
+            android:id="@+id/currentImage"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:paddingTop="16dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:hint="Image"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="13.6sp" />
+
+    </LinearLayout>
+
+</ScrollView>

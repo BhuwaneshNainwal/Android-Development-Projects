@@ -112,7 +112,7 @@
                 android:background="@drawable/back"
                 android:layout_marginLeft="10dp"
                 android:padding="27.5dp"
-                android:text="Press the bell icon to get notified 10 minutes before a contest."
+                android:text="Press the bell icon to get notified 10 minutes before a contest begins."
                 android:textStyle="bold"
                 android:fontFamily="@font/dancingscript"
                 android:textColor="@color/black"

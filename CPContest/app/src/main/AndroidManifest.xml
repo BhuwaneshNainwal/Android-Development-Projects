@@ -11,23 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CPContest">
-        <activity android:name=".SplashActivity" android:label="CPfier">
+        <activity android:name=".SplashActivity" android:label="CPfier" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" android:label="CPfier">
+        <activity android:name=".MainActivity" android:exported="false" android:label="CPfier">
         </activity>
 
-        <activity android:name=".contest_item" android:label="ALL"></activity>
+        <activity android:name=".contest_item" android:exported="false" android:label="ALL"></activity>
 
-        <activity android:name=".About" android:label="ABOUT"></activity>
+        <activity android:name=".About" android:exported="false" android:label="ABOUT"></activity>
 
-        <activity android:name=".HelpActivity" android:label="HELP"></activity>
+        <activity android:name=".HelpActivity" android:exported="false" android:label="HELP"></activity>
 
-        <receiver android:name=".ReminderBroadcast"></receiver>
+        <receiver android:name=".ReminderBroadcast"  android:exported="false"></receiver>
 
     </application>
 

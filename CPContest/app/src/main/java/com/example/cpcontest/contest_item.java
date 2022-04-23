@@ -67,7 +67,6 @@ public class contest_item extends AppCompatActivity {
                         data = isw.read();
                     }
 
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
@@ -75,7 +74,6 @@ public class contest_item extends AppCompatActivity {
                         urlConnection.disconnect();
                     }
                 }
-
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -98,7 +96,6 @@ public class contest_item extends AppCompatActivity {
                     int isRunning = 0;
                     if(currentObj.getString("status").equals("CODING"))
                         isRunning = 1;
-
 
                     Date date1;
 
@@ -125,21 +122,15 @@ public class contest_item extends AppCompatActivity {
                     }
 
 
-                    SimpleDateFormat gmtDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    gmtDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-
-                    Date currentDateTime = gmtDateFormat.parse(gmtDateFormat.format(new Date()));
-
-                    long millis = date1.getTime() - currentDateTime.getTime();
-
-
                     String year = startTime.substring(startTime.length() - 4, startTime.length());
                     startTime = startTime.substring(0, startTime.length() - 14) + year;
 
-                    ArrayList<String> mediater = new ArrayList<>();
+                    ArrayList<String> mediater = new ArrayList<String>(5);
+
 
                     StringTokenizer st1 = new StringTokenizer(
                             startTime, " ");
+
 
                     // Condition holds true till there is single token
                     // remaining using hasMoreTokens() method
@@ -147,6 +138,8 @@ public class contest_item extends AppCompatActivity {
                     {
                         mediater.add(st1.nextToken());
                     }
+
+
                     startTime = mediater.get(2) + ' ' + mediater.get(1) + ' ' + mediater.get(4)+ ' ' + mediater.get(0)+ ' ' + mediater.get(3).charAt(0) + mediater.get(3).charAt(1) + mediater.get(3).charAt(2) + mediater.get(3).charAt(3) + mediater.get(3).charAt(4);
                     String endTime = currentObj.getString("end_time");
 
@@ -171,7 +164,7 @@ public class contest_item extends AppCompatActivity {
                     String year1 = endTime.substring(endTime.length() - 4, endTime.length());
                     endTime = endTime.substring(0, endTime.length() - 14) + year1;
 
-                    ArrayList<String> mediater1 = new ArrayList<>();
+                    ArrayList<String> mediater1 = new ArrayList<String>(5);
 
                     StringTokenizer st2 = new StringTokenizer(
                             endTime, " ");
@@ -210,8 +203,6 @@ public class contest_item extends AppCompatActivity {
             listView.setAdapter(contestAdapter);
         }
     }
-
-
 
 }
 
