@@ -92,7 +92,7 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/credits"
+        android:id="@+id/credits1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
@@ -101,6 +101,57 @@
         android:textStyle="bold"
         android:textColor="#616161"
         android:textSize="13sp" />
+    <TextView
+        android:id="@+id/credits2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textStyle="bold"
+        android:textColor="#616161"
+        android:textSize="13sp" />
+    <TextView
+        android:id="@+id/credits3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textStyle="bold"
+        android:textColor="#616161"
+        android:textSize="13sp" />
+    <TextView
+        android:id="@+id/credits4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textStyle="bold"
+        android:textColor="#616161"
+        android:textSize="13sp" />
+    <TextView
+        android:id="@+id/credits5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textStyle="bold"
+        android:textColor="#616161"
+        android:textSize="13sp" />
+    <TextView
+        android:id="@+id/credits6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textStyle="bold"
+        android:textColor="#616161"
+        android:textSize="13sp" />
+
 
 
 </LinearLayout>

@@ -12,17 +12,21 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+
 public class ReminderBroadcast extends BroadcastReceiver {
+
+    private static int NOTIFICATION_ID = 1;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        NOTIFICATION_ID++;
         PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         @SuppressLint("InvalidWakeLockTag") PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "Tag");
         wakeLock.acquire();
         wakeLock.release();
 
-        String contestName =intent.getStringExtra("ContestName");
+        String contestName = intent.getStringExtra("ContestName");
         Notification.Builder builder = new Notification.Builder(context, "CP CONTEST");
         builder.setVisibility(Notification.VISIBILITY_PUBLIC);
         builder.setContentTitle(contestName);
@@ -32,8 +36,8 @@ public class ReminderBroadcast extends BroadcastReceiver {
         @SuppressLint("WrongConstant") Notification.Builder builder1 = builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
-        notificationManager.notify(200, builder.build());
-
+        notificationManager.notify(NOTIFICATION_ID, builder.build());
+        NOTIFICATION_ID++;
 
     }
 }

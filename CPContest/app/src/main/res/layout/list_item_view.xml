@@ -32,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:orientation="horizontal"
+            android:id="@+id/bellLayout"
             android:background="#EDE7F6">
 
         <TextView
@@ -47,15 +48,37 @@
             android:textColor="#000000"
             android:textSize="13.6sp" />
 
-            <ImageView
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/bellCrossIcon"
+                    android:splitMotionEvents = "false"
+                    android:layout_width="match_parent"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="28dp"
+                    android:maxHeight="28dp"
+                    android:scaleType="fitCenter"
+                    android:padding="16dp"
+                    android:src="@drawable/crossbell"
+                    android:layout_height="68dp"
+                    />
+                <ImageButton
                 android:id="@+id/bellIcon"
                 android:splitMotionEvents = "false"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:paddingRight="4dp"
                 android:layout_width="match_parent"
+                android:adjustViewBounds="true"
+                android:maxWidth="28dp"
+                android:maxHeight="28dp"
+                android:scaleType="fitCenter"
+                android:padding="16dp"
+                android:src="@drawable/bell"
                 android:layout_height="68dp"
                  />
+
+
+            </FrameLayout>
+
 
 
         </LinearLayout>

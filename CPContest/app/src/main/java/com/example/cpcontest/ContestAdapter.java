@@ -4,15 +4,18 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.DataSetObserver;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -21,6 +24,10 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.util.ArrayList;
@@ -32,6 +39,7 @@ import static com.example.cpcontest.R.layout.list_item_view;
 class ContestAdapter implements ListAdapter {
 
     public static String notificationTittle;
+    private static int NOTIFICATION_ID = 1;
 
     ArrayList<Contest> arrayList;
     Context context;
@@ -54,7 +62,6 @@ class ContestAdapter implements ListAdapter {
     public void registerDataSetObserver(DataSetObserver observer) {
 
     }
-
     @Override
     public void unregisterDataSetObserver(DataSetObserver observer) {
 
@@ -110,7 +117,6 @@ class ContestAdapter implements ListAdapter {
             endTime.setText(contest.getEndTime());
 
 
-
             if (contest.getRunningStatus() == 1) {
 
                 LinearLayout currentLayout;
@@ -121,12 +127,27 @@ class ContestAdapter implements ListAdapter {
                 currentLayout.setBackgroundColor(Color.parseColor("#EF9A9A"));
                 tittle.setBackgroundColor(Color.parseColor("#EF9A9A"));
 
-                ImageView image = convertView.findViewById(R.id.bellIcon);
-                image.setBackgroundColor(Color.parseColor("#EF9A9A"));
+
+                ImageButton image = convertView.findViewById(R.id.bellIcon);
+                image.setEnabled(false);
+                image.setVisibility(View.GONE);
+
+                image = convertView.findViewById(R.id.bellCrossIcon);
+                image.setEnabled(false);
+                image.setVisibility(View.GONE);
+
+                currentLayout = (LinearLayout) convertView.findViewById(R.id.bellLayout);
+                currentLayout.setBackgroundColor(Color.parseColor("#EF9A9A"));
+
+                ArrayList<String> arrayList = getArrayList("contest");
+                if(arrayList.contains(contest.getContestName())) {
+                    arrayList.remove(contest.getContestName());
+                }
 
             }
             else if(contest.getTwentyFourHours().equals("Yes"))
             {
+
                 LinearLayout currentLayout;
                 currentLayout = (LinearLayout) convertView.findViewById(R.id.list);
 
@@ -135,29 +156,62 @@ class ContestAdapter implements ListAdapter {
                 currentLayout.setBackgroundColor(Color.parseColor("#c6f68d"));
                 tittle.setBackgroundColor(Color.parseColor("#c6f68d"));
 
-                ImageView image = convertView.findViewById(R.id.bellIcon);
+                currentLayout = (LinearLayout) convertView.findViewById(R.id.bellLayout);
+                currentLayout.setBackgroundColor(Color.parseColor("#c6f68d"));
+
+                ImageButton image = convertView.findViewById(R.id.bellIcon);
+                image.setBackgroundColor(Color.parseColor("#c6f68d"));
+
+                ImageButton image1 = convertView.findViewById(R.id.bellCrossIcon);
+
+                image1.setBackgroundColor(Color.parseColor("#c6f68d"));
+
+                ArrayList<String> contestAdded = getArrayList("contest");
+
+                if(contestAdded.contains(contest.getContestName())){
+
+                    image.setEnabled(false);
+                    image.setVisibility(View.GONE);
+                }
+
+
                 image.setOnClickListener(new View.OnClickListener() {
                     @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onClick(View v) {
 
-                        Toast.makeText(context,"You will be notified 10 minutes before",Toast.LENGTH_SHORT).show();
-                        image.setEnabled(false);
+                        contestAdded.add(contest.getContestName());
+                        saveArrayList(contestAdded, "contest");
 
-                        new Handler().postDelayed(new Runnable() {
+                        final Animation animation = AnimationUtils.loadAnimation(context,R.anim.bounce_animation);
+                        image.setAnimation(animation);
 
+                        animation.setAnimationListener(new Animation.AnimationListener(){
                             @Override
-                            public void run() {
-                                image.setEnabled(true);
+                            public void onAnimationStart(Animation arg0) {
+
 
                             }
-                        },3000);// set time as per your requirement
+                            @Override
+                            public void onAnimationRepeat(Animation arg0) {
+                            }
+                            @Override
+                            public void onAnimationEnd(Animation arg0) {
+
+                                image.clearAnimation();
+                                image.setVisibility(View.GONE);
+                                image.setEnabled(false);
+                            }
+
+                        });
+
+                        image.startAnimation(animation);
 
                         notificationTittle = tittle.getText().toString();
                         Intent intent = new Intent(context, ReminderBroadcast.class);
-                        intent.putExtra( "ContestName", contest.getContestName());
-                        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
-                        
+                        intent.putExtra( "ContestName", notificationTittle);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                        NOTIFICATION_ID++;
 
                         DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM")
                                 .withLocale(Locale.ENGLISH);
@@ -182,43 +236,73 @@ class ContestAdapter implements ListAdapter {
                     }
                 });
 
-                Drawable myDrawable = image.getResources().getDrawable(R.drawable.bell);
-                image.setImageDrawable(myDrawable);
-                image.setBackgroundColor(Color.parseColor("#c6f68d"));
-
             }
             else
             {
-                ImageView image = convertView.findViewById(R.id.bellIcon);
-                Drawable myDrawable = image.getResources().getDrawable(R.drawable.bell);
-                image.setImageDrawable(myDrawable);
+                ImageButton image = convertView.findViewById(R.id.bellIcon);
+                ImageButton image1 = convertView.findViewById(R.id.bellCrossIcon);
+
+                ArrayList<String> contestAdded = getArrayList("contest");
+
+                if(contestAdded.contains(contest.getContestName())){
+
+                    image.setEnabled(false);
+                    image.setVisibility(View.GONE);
+                }
+
 
                 LinearLayout currentLayout = (LinearLayout) convertView.findViewById(R.id.list);
                 currentLayout.setBackgroundColor(Color.parseColor("#ffc77d"));
                 currentLayout = (LinearLayout) convertView.findViewById(R.id.vertical);
                 currentLayout.setBackgroundColor(Color.parseColor("#ffc77d"));
                 tittle.setBackgroundColor(Color.parseColor("#ffc77d"));
+
+                currentLayout = (LinearLayout) convertView.findViewById(R.id.bellLayout);
+                currentLayout.setBackgroundColor(Color.parseColor("#ffc77d"));
+
                 image.setBackgroundColor(Color.parseColor("#ffc77d"));
+                image1.setBackgroundColor(Color.parseColor("#ffc77d"));
 
                 image.setOnClickListener(new View.OnClickListener() {
                     @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onClick(View v) {
 
-                        Toast.makeText(context, "You will be notified 10 minutes before", Toast.LENGTH_SHORT).show();
-                        image.setEnabled(false);
-                        new Handler().postDelayed(new Runnable() {
+                        contestAdded.add(contest.getContestName());
+                        saveArrayList(contestAdded, "contest");
 
+                        final Animation animation = AnimationUtils.loadAnimation(context,R.anim.bounce_animation);
+                        image.setAnimation(animation);
+
+                        animation.setAnimationListener(new Animation.AnimationListener(){
                             @Override
-                            public void run() {
-                                image.setEnabled(true);
+                            public void onAnimationStart(Animation arg0) {
 
                             }
-                        }, 3000);// set time as per your requirement
+                            @Override
+                            public void onAnimationRepeat(Animation arg0) {
+                            }
+                            @Override
+                            public void onAnimationEnd(Animation arg0) {
+
+                                image.clearAnimation();
+                                image.setVisibility(View.GONE);
+                                image.setEnabled(false);
+                            }
+
+                        });
+
+                        image.startAnimation(animation);
+
+
+                        Toast.makeText(context, "You will be notified 10 minutes before", Toast.LENGTH_SHORT).show();
 
                         notificationTittle = tittle.getText().toString();
                         Intent intent = new Intent(context, ReminderBroadcast.class);
-                        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+                        intent.putExtra("ContestName", notificationTittle);
+
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                        NOTIFICATION_ID++;
 
                         DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM")
                                 .withLocale(Locale.ENGLISH);
@@ -240,6 +324,7 @@ class ContestAdapter implements ListAdapter {
                         } else {
                             alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
                         }
+
                     }
 
                 });
@@ -267,4 +352,30 @@ class ContestAdapter implements ListAdapter {
     public boolean isEmpty() {
         return false;
     }
+
+
+    public void saveArrayList(ArrayList<String> list, String key){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(list);
+        editor.putString(key, json);
+        editor.apply();
+
+    }
+
+    public ArrayList<String> getArrayList(String key){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        Gson gson = new Gson();
+        String json = prefs.getString(key, null);
+
+        if(json == null || json == "")
+            return new ArrayList<>();
+        Type type = new TypeToken<ArrayList<String>>() {}.getType();
+        return gson.fromJson(json, type);
+    }
+
+
+
+
 }

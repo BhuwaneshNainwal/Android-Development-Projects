@@ -184,7 +184,6 @@ public class contest_item extends AppCompatActivity {
                     contest.add(currentContest);
                 }
 
-
             } catch (JSONException | ParseException e) {
 
                 Log.e("QueryUtils", "Problem parsing the contest JSON results", e);
