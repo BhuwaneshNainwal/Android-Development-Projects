@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/imagebackground"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <ImageView
+        android:id="@+id/idIVimage"
+        android:layout_width="fill_parent"
+        android:layout_height="210dp"
+        android:scaleType="fitXY"
+        android:numColumns="auto_fit"
+        android:gravity="center"
+        android:background="@drawable/imagebackground"
+        android:stretchMode="columnWidth"
+        android:padding="4dp"
+
+        />
+</LinearLayout>

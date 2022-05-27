@@ -201,38 +201,39 @@ class ContestAdapter implements ListAdapter {
                                 image.clearAnimation();
                                 image.setVisibility(View.GONE);
                                 image.setEnabled(false);
+
+
+                                notificationTittle = tittle.getText().toString();
+                                Intent intent = new Intent(context, ReminderBroadcast.class);
+                                intent.putExtra( "ContestName", notificationTittle);
+                                PendingIntent pendingIntent = PendingIntent.getBroadcast(context, NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                                NOTIFICATION_ID++;
+
+                                DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM")
+                                        .withLocale(Locale.ENGLISH);
+                                int month = parser.parse(contest.getStartTime().substring(3, 6)).get(ChronoField.MONTH_OF_YEAR);
+                                int date = Integer.parseInt(contest.getStartTime().substring(0, 2));
+                                int year = Integer.parseInt(contest.getStartTime().substring(7, 11));
+                                int hour = Integer.parseInt(contest.getStartTime().substring(16, 18));
+                                int minutes = Integer.parseInt(contest.getStartTime().substring(19, 21));
+
+                                Calendar c = Calendar.getInstance();
+                                c.setTimeInMillis(System.currentTimeMillis());
+                                c.set(year, month - 1, date, hour, minutes - 10, 0);
+                                AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
+                                if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O){
+
+                                    alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+                                }
+                                else {
+                                    alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+                                }
                             }
 
                         });
-
                         image.startAnimation(animation);
 
-                        notificationTittle = tittle.getText().toString();
-                        Intent intent = new Intent(context, ReminderBroadcast.class);
-                        intent.putExtra( "ContestName", notificationTittle);
-                        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                        NOTIFICATION_ID++;
-
-                        DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM")
-                                .withLocale(Locale.ENGLISH);
-                        int month = parser.parse(contest.getStartTime().substring(3, 6)).get(ChronoField.MONTH_OF_YEAR);
-                        int date = Integer.parseInt(contest.getStartTime().substring(0, 2));
-                        int year = Integer.parseInt(contest.getStartTime().substring(7, 11));
-                        int hour = Integer.parseInt(contest.getStartTime().substring(16, 18));
-                        int minutes = Integer.parseInt(contest.getStartTime().substring(19, 21));
-
-                        Calendar c = Calendar.getInstance();
-                        c.setTimeInMillis(System.currentTimeMillis());
-                        c.set(year, month - 1, date, hour, minutes - 10, 0);
-                        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-
-                        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O){
-
-                            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-                        }
-                        else {
-                            alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-                        }
                     }
                 });
 
@@ -288,43 +289,41 @@ class ContestAdapter implements ListAdapter {
                                 image.clearAnimation();
                                 image.setVisibility(View.GONE);
                                 image.setEnabled(false);
+
+                                Toast.makeText(context, "You will be notified 10 minutes before", Toast.LENGTH_SHORT).show();
+
+                                notificationTittle = tittle.getText().toString();
+                                Intent intent = new Intent(context, ReminderBroadcast.class);
+                                intent.putExtra("ContestName", notificationTittle);
+
+                                PendingIntent pendingIntent = PendingIntent.getBroadcast(context, NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                                NOTIFICATION_ID++;
+
+                                DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM")
+                                        .withLocale(Locale.ENGLISH);
+                                int month = parser.parse(contest.getStartTime().substring(3, 6)).get(ChronoField.MONTH_OF_YEAR);
+                                int date = Integer.parseInt(contest.getStartTime().substring(0, 2));
+                                int year = Integer.parseInt(contest.getStartTime().substring(7, 11));
+                                int hour = Integer.parseInt(contest.getStartTime().substring(16, 18));
+                                int minutes = Integer.parseInt(contest.getStartTime().substring(19, 21));
+
+                                Calendar c = Calendar.getInstance();
+                                c.setTimeInMillis(System.currentTimeMillis());
+                                c.set(year, month - 1, date, hour, minutes - 10, 0);
+                                AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
+                                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+                                    alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+
+                                } else {
+                                    alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+                                }
                             }
 
                         });
 
                         image.startAnimation(animation);
-
-
-                        Toast.makeText(context, "You will be notified 10 minutes before", Toast.LENGTH_SHORT).show();
-
-                        notificationTittle = tittle.getText().toString();
-                        Intent intent = new Intent(context, ReminderBroadcast.class);
-                        intent.putExtra("ContestName", notificationTittle);
-
-                        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                        NOTIFICATION_ID++;
-
-                        DateTimeFormatter parser = DateTimeFormatter.ofPattern("MMM")
-                                .withLocale(Locale.ENGLISH);
-                        int month = parser.parse(contest.getStartTime().substring(3, 6)).get(ChronoField.MONTH_OF_YEAR);
-                        int date = Integer.parseInt(contest.getStartTime().substring(0, 2));
-                        int year = Integer.parseInt(contest.getStartTime().substring(7, 11));
-                        int hour = Integer.parseInt(contest.getStartTime().substring(16, 18));
-                        int minutes = Integer.parseInt(contest.getStartTime().substring(19, 21));
-
-                        Calendar c = Calendar.getInstance();
-                        c.setTimeInMillis(System.currentTimeMillis());
-                        c.set(year, month - 1, date, hour, minutes - 10, 0);
-                        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-
-                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-
-                            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-
-                        } else {
-                            alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-                        }
-
                     }
 
                 });

@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
         rate = findViewById(R.id.rate);
 
 
+        ImageView allImage = findViewById(R.id.allImage);
+        ImageView aboutImage = findViewById(R.id.aboutImage);
+        ImageView helpImage = findViewById(R.id.helpImage);
+        ImageView rateImage = findViewById(R.id.rateImage);
+
         goToContest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,13 +82,41 @@ public class MainActivity extends AppCompatActivity {
                     },3000);// set time as per your requirement
                 }
 
-
-
-
-
             }
         });
 
+
+
+        allImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewActivity();
+            }
+
+            public void openNewActivity() {
+
+
+                if(isNetworkStatusAvialable (getApplicationContext())) {
+
+                    Intent intent = new Intent(MainActivity.this, contest_item.class);
+                    startActivity(intent);
+
+                } else {
+
+                    goToContest.setEnabled(false);
+                    Toast.makeText(getApplicationContext(), "Please check your Internet Connection", Toast.LENGTH_SHORT).show();
+                    new Handler().postDelayed(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            goToContest.setEnabled(true);
+
+                        }
+                    },3000);// set time as per your requirement
+                }
+
+            }
+        });
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +127,33 @@ public class MainActivity extends AppCompatActivity {
 
             public void openNewActivity() {
                 Intent intent = new Intent(MainActivity.this, About.class);
+                startActivity(intent);
+            }
+        });
+
+        aboutImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                openNewActivity();
+            }
+
+            public void openNewActivity() {
+                Intent intent = new Intent(MainActivity.this, About.class);
+                startActivity(intent);
+            }
+        });
+
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewActivity();
+            }
+
+            public void openNewActivity() {
+                Intent intent = new Intent(MainActivity.this, HelpActivity.class);
                 startActivity(intent);
             }
         });
@@ -109,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rate.setOnClickListener(new View.OnClickListener() {
+        helpImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -181,8 +242,6 @@ public class MainActivity extends AppCompatActivity {
         intent.addFlags(flags);
         return intent;
     }
-
-
 
 }
 

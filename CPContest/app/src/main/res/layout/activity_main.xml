@@ -72,7 +72,7 @@ tools:context=".MainActivity">
                     android:id="@+id/gotToContest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/bus"
+                    android:layout_below="@id/allImage"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:text="ALL"
@@ -80,7 +80,7 @@ tools:context=".MainActivity">
                     app:fontFamily="@font/aclonica" />
 
                 <ImageView
-                    android:id="@+id/bus"
+                    android:id="@+id/allImage"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:adjustViewBounds="true"
@@ -105,7 +105,7 @@ tools:context=".MainActivity">
                     android:id="@+id/about"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/imageView3"
+                    android:layout_below="@id/aboutImage"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:text="ABOUT"
@@ -113,7 +113,7 @@ tools:context=".MainActivity">
                     app:fontFamily="@font/aclonica" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/aboutImage"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_centerHorizontal="true"
@@ -148,7 +148,7 @@ tools:context=".MainActivity">
                     android:id="@+id/help"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/bus1"
+                    android:layout_below="@id/helpImage"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:text="HELP"
@@ -156,7 +156,7 @@ tools:context=".MainActivity">
                     app:fontFamily="@font/aclonica" />
 
                 <ImageView
-                    android:id="@+id/bus1"
+                    android:id="@+id/helpImage"
                     android:layout_width="130dp"
                     android:layout_height="75dp"
                     android:scaleType="centerCrop"
@@ -182,14 +182,14 @@ tools:context=".MainActivity">
                     android:id="@+id/rate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/train"
+                    android:layout_below="@id/rateImage"
                     android:layout_centerHorizontal="true"
                     android:text="RATE"
                     android:textSize="24sp"
                     app:fontFamily="@font/aclonica" />
 
                 <ImageView
-                    android:id="@+id/train"
+                    android:id="@+id/rateImage"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:scaleType="centerCrop"
