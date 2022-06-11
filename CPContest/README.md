@@ -3,4 +3,4 @@ CPfier provides you the platform to get a list of all the coding contests at one
 
 ## Features:
 * Easy to use interface.
-* 
+* Coding platforms covered: Codechef, Codeforces, Atcoder, Leetcode, Topcoder, Google, HackerRank, HackerEarth.
