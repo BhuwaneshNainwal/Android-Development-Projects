@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        help.setOnClickListener(new View.OnClickListener() {
+        helpImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openNewActivity();
@@ -170,7 +170,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        helpImage.setOnClickListener(new View.OnClickListener() {
+        rateImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                rateApp();
+            }
+
+        });
+
+        rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
